@@ -14,10 +14,10 @@ import (
 )
 
 // compile time check for interface compatability
-var _ kstore.Keystore = (*Krab)(nil)
+var _ kstore.Keystore = (*Keystore)(nil)
 
-// Krab is used to manage an encrypted IPFS keystore
-type Krab struct {
+// Keystore is used to manage an encrypted IPFS keystore
+type Keystore struct {
 	em *crypto.EncryptManager
 	ds *badger.Datastore
 }
@@ -29,22 +29,24 @@ type Opts struct {
 	ReadOnly   bool
 }
 
-// NewKrab is used to create a new krab ipfs keystore manager
-func NewKrab(opts Opts) (*Krab, error) {
+// NewKeystore is used to create a new krab ipfs keystore manager
+func NewKeystore(opts Opts) (*Keystore, error) {
 	badgerOpts := &badger.DefaultOptions
-	badgerOpts.ReadOnly = opts.ReadOnly
+	if opts.ReadOnly {
+		badgerOpts.ReadOnly = opts.ReadOnly
+	}
 	ds, err := badger.NewDatastore(opts.DSPath, badgerOpts)
 	if err != nil {
 		return nil, err
 	}
-	return &Krab{
+	return &Keystore{
 		em: crypto.NewEncryptManager(opts.Passphrase),
 		ds: ds,
 	}, nil
 }
 
 // Has is used to check whether or not the given key name exists
-func (km *Krab) Has(name string) (bool, error) {
+func (km *Keystore) Has(name string) (bool, error) {
 	if err := validateName(name); err != nil {
 		return false, err
 	}
@@ -57,7 +59,7 @@ func (km *Krab) Has(name string) (bool, error) {
 }
 
 // Put is used to store a key in our keystore
-func (km *Krab) Put(name string, privKey ci.PrivKey) error {
+func (km *Keystore) Put(name string, privKey ci.PrivKey) error {
 	if err := validateName(name); err != nil {
 		return err
 	}
@@ -80,7 +82,7 @@ func (km *Krab) Put(name string, privKey ci.PrivKey) error {
 }
 
 // Get is used to retrieve a key from our keystore
-func (km *Krab) Get(name string) (ci.PrivKey, error) {
+func (km *Keystore) Get(name string) (ci.PrivKey, error) {
 	if err := validateName(name); err != nil {
 		return nil, err
 	}
@@ -102,7 +104,7 @@ func (km *Krab) Get(name string) (ci.PrivKey, error) {
 }
 
 // Delete is used to remove a key from our keystore
-func (km *Krab) Delete(name string) error {
+func (km *Keystore) Delete(name string) error {
 	if err := validateName(name); err != nil {
 		return err
 	}
@@ -110,7 +112,7 @@ func (km *Krab) Delete(name string) error {
 }
 
 // List is used to list all key identifiers in our keystore
-func (km *Krab) List() ([]string, error) {
+func (km *Keystore) List() ([]string, error) {
 	entries, err := km.ds.Query(query.Query{})
 	if err != nil {
 		return nil, err
@@ -127,6 +129,6 @@ func (km *Krab) List() ([]string, error) {
 }
 
 // Close is used to close our badger connection
-func (km *Krab) Close() error {
+func (km *Keystore) Close() error {
 	return km.ds.Close()
 }

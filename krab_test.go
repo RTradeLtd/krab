@@ -6,7 +6,7 @@ import (
 
 	ci "github.com/libp2p/go-libp2p-crypto"
 
-	"github.com/RTradeLtd/rtfs/v2/krab"
+	"github.com/RTradeLtd/krab"
 )
 
 const (
@@ -21,7 +21,7 @@ func TestKrab(t *testing.T) {
 			t.Fatal(err)
 		}
 	}()
-	km, err := krab.NewKrab(krab.Opts{Passphrase: passphrase, DSPath: dsPath, ReadOnly: false})
+	km, err := krab.NewKeystore(krab.Opts{Passphrase: passphrase, DSPath: dsPath, ReadOnly: false})
 	if err != nil {
 		t.Fatal(err)
 	}
