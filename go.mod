@@ -10,4 +10,5 @@ require (
 	github.com/ipfs/go-ipfs-keystore v0.0.1
 	github.com/libp2p/go-libp2p-core v0.0.3
 	github.com/libp2p/go-libp2p-crypto v0.1.0
+	github.com/mattn/go-colorable v0.1.2 // indirect
 )
