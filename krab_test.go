@@ -7,6 +7,7 @@ import (
 	ci "github.com/libp2p/go-libp2p-crypto"
 
 	"github.com/RTradeLtd/krab"
+	badger "github.com/ipfs/go-ds-badger"
 )
 
 const (
@@ -18,14 +19,18 @@ const (
 func TestKrab(t *testing.T) {
 	defer func() {
 		if err := os.RemoveAll(dsPath); err != nil {
-			t.Fatal(err)
+			t.Error(err)
 		}
 	}()
-	km, err := krab.NewKeystore(krab.Opts{Passphrase: passphrase, DSPath: dsPath, ReadOnly: false})
+	ds, err := badger.NewDatastore(dsPath, &badger.DefaultOptions)
 	if err != nil {
 		t.Fatal(err)
 	}
-	defer km.Close()
+	defer ds.Close()
+	km, err := krab.NewKeystore(ds, passphrase)
+	if err != nil {
+		t.Fatal(err)
+	}
 	// this should fail
 	if has, err := km.Has(testKeyName); err == nil {
 		t.Fatal("key was found when it shouldn't have been")

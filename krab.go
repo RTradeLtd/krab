@@ -6,9 +6,10 @@ import (
 	"strings"
 
 	"github.com/RTradeLtd/crypto/v2"
+	datastore "github.com/ipfs/go-datastore"
 	ds "github.com/ipfs/go-datastore"
+	namespace "github.com/ipfs/go-datastore/namespace"
 	"github.com/ipfs/go-datastore/query"
-	badger "github.com/ipfs/go-ds-badger"
 	kstore "github.com/ipfs/go-ipfs-keystore"
 	ci "github.com/libp2p/go-libp2p-core/crypto"
 )
@@ -19,29 +20,15 @@ var _ kstore.Keystore = (*Keystore)(nil)
 // Keystore is used to manage an encrypted IPFS keystore
 type Keystore struct {
 	em *crypto.EncryptManager
-	ds *badger.Datastore
-}
-
-// Opts is used to configure a Krab keystore
-type Opts struct {
-	Passphrase string
-	DSPath     string
-	ReadOnly   bool
+	ds datastore.Batching
 }
 
 // NewKeystore is used to create a new krab ipfs keystore manager
-func NewKeystore(opts Opts) (*Keystore, error) {
-	badgerOpts := &badger.DefaultOptions
-	if opts.ReadOnly {
-		badgerOpts.ReadOnly = opts.ReadOnly
-	}
-	ds, err := badger.NewDatastore(opts.DSPath, badgerOpts)
-	if err != nil {
-		return nil, err
-	}
+func NewKeystore(ds datastore.Batching, passphrase string) (*Keystore, error) {
+	wrapDS := namespace.Wrap(ds, datastore.NewKey("/krabkeystore"))
 	return &Keystore{
-		em: crypto.NewEncryptManager(opts.Passphrase),
-		ds: ds,
+		em: crypto.NewEncryptManager(passphrase),
+		ds: wrapDS,
 	}, nil
 }
 
@@ -126,9 +113,4 @@ func (km *Keystore) List() ([]string, error) {
 		ids = append(ids, strings.Split(v.Key, "/")[1])
 	}
 	return ids, nil
-}
-
-// Close is used to close our badger connection
-func (km *Keystore) Close() error {
-	return km.ds.Close()
 }
