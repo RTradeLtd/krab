@@ -7,6 +7,12 @@ github.com/RTradeLtd/crypto/v2 v2.1.1 h1:P59zYkkNkl6K1KiTRvW52AYwLvwmtzuzZ9+AjLW
 github.com/RTradeLtd/crypto/v2 v2.1.1/go.mod h1:saIQ67Btn4JWsOdzjn9U6Dl+aZlg+YKgg4RsQKXxjf4=
 github.com/RTradeLtd/entropy-mnemonics v0.0.0-20170316012907-7b01a644a636 h1:i/+1LBA+YMfD1m9UnQP52A7S6y2U3C0xpMBehPkDRug=
 github.com/RTradeLtd/entropy-mnemonics v0.0.0-20170316012907-7b01a644a636/go.mod h1:zpzHNRdCMCG9PM9QO5jVSldXCRMJ7lY42yJ5TEe//7M=
+github.com/RTradeLtd/go-ds-bbolt v0.0.1 h1:ffscu4j2h8lLdCMktViowfVCekDvBiifDgjRdx0R8kc=
+github.com/RTradeLtd/go-ds-bbolt v0.0.1/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628224425-3f1ebba3b4b1 h1:A0XWMYZ5bxDlBv8R3OPKu5vOQTMSSYDqlMhANgo6xEs=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628224425-3f1ebba3b4b1/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628225551-8b14609520ff h1:wGzvuvAdfh45kyYvZFCHx/u15GftqHTxombhM3sov80=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628225551-8b14609520ff/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
 github.com/aead/siphash v1.0.1/go.mod h1:Nywa3cDsYNNK3gaciGTWPwHt0wlpNV15vwmswBAUSII=
 github.com/btcsuite/btcd v0.0.0-20190213025234-306aecffea32/go.mod h1:DrZx5ec/dmnfpw9KyYoQyYo7d0KEvTkk/5M/vbZjAr8=
 github.com/btcsuite/btcd v0.0.0-20190523000118-16327141da8c h1:aEbSeNALREWXk0G7UdNhR3ayBV7tZ4M2PNmnrCAph6Q=
@@ -125,6 +131,8 @@ github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/whyrusleeping/go-logging v0.0.0-20170515211332-0457bb6b88fc h1:9lDbC6Rz4bwmou+oE6Dt4Cb2BGMur5eR/GYptkKUVHo=
 github.com/whyrusleeping/go-logging v0.0.0-20170515211332-0457bb6b88fc/go.mod h1:bopw91TMyo8J3tvftk8xmU2kPmlrt4nScJQZU2hE5EM=
+go.etcd.io/bbolt v1.3.3 h1:MUGmc65QhB3pIlaQ5bB4LwqSj6GIonVJXpZiaKNyaKk=
+go.etcd.io/bbolt v1.3.3/go.mod h1:IbVyRI1SCnLcuJnV2u8VeU0CEYM7e686BmAb1XKL+uU=
 golang.org/x/crypto v0.0.0-20170930174604-9419663f5a44/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20190211182817-74369b46fc67/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
 golang.org/x/crypto v0.0.0-20190225124518-7f87c0fbb88b/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
