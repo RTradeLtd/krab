@@ -13,6 +13,8 @@ github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628224425-3f1ebba3b4b1 h1:A0XWMYZ
 github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628224425-3f1ebba3b4b1/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
 github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628225551-8b14609520ff h1:wGzvuvAdfh45kyYvZFCHx/u15GftqHTxombhM3sov80=
 github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628225551-8b14609520ff/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2 h1:CR/Z5RudOBYqQaL1VZ8ocb2sYwdqg/hJ61thwubnLr4=
+github.com/RTradeLtd/go-ds-bbolt v0.0.2/go.mod h1:Eovtvz74c8PD+5a24yo0s1jXZMDfdDAz5bBdeprV470=
 github.com/aead/siphash v1.0.1/go.mod h1:Nywa3cDsYNNK3gaciGTWPwHt0wlpNV15vwmswBAUSII=
 github.com/btcsuite/btcd v0.0.0-20190213025234-306aecffea32/go.mod h1:DrZx5ec/dmnfpw9KyYoQyYo7d0KEvTkk/5M/vbZjAr8=
 github.com/btcsuite/btcd v0.0.0-20190523000118-16327141da8c h1:aEbSeNALREWXk0G7UdNhR3ayBV7tZ4M2PNmnrCAph6Q=

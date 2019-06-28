@@ -6,7 +6,7 @@ require (
 	github.com/AndreasBriese/bbloom v0.0.0-20190306092124-e2d15f34fcf9 // indirect
 	github.com/RTradeLtd/crypto/v2 v2.1.1
 	github.com/RTradeLtd/entropy-mnemonics v0.0.0-20170316012907-7b01a644a636
-	github.com/RTradeLtd/go-ds-bbolt v0.0.2-0.20190628225551-8b14609520ff
+	github.com/RTradeLtd/go-ds-bbolt v0.0.2
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/dgryski/go-farm v0.0.0-20190416075124-e1214b5e05dc // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
