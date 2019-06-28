@@ -6,8 +6,8 @@ import (
 
 	ci "github.com/libp2p/go-libp2p-crypto"
 
+	bolt "github.com/RTradeLtd/go-ds-bbolt"
 	"github.com/RTradeLtd/krab"
-	badger "github.com/ipfs/go-ds-badger"
 )
 
 const (
@@ -22,7 +22,7 @@ func TestKrab(t *testing.T) {
 			t.Error(err)
 		}
 	}()
-	ds, err := badger.NewDatastore(dsPath, &badger.DefaultOptions)
+	ds, err := bolt.NewDatastore(dsPath, nil, nil)
 	if err != nil {
 		t.Fatal(err)
 	}
