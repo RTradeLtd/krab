@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/RTradeLtd/krab"
+	"github.com/RTradeLtd/krab/v4"
 	ci "github.com/libp2p/go-libp2p-core/crypto"
 )
 

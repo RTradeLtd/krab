@@ -7,7 +7,7 @@ import (
 	ci "github.com/libp2p/go-libp2p-crypto"
 
 	bolt "github.com/RTradeLtd/go-ds-bbolt"
-	"github.com/RTradeLtd/krab"
+	"github.com/RTradeLtd/krab/v4"
 )
 
 const (

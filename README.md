@@ -8,7 +8,7 @@
 
 ## usage
 
-There are two ways to use `krab`, one is to import with `import "github.com/RTradeLtd/krab"`, the other is to use [RTradeLtd/kaas](https://github.com/RTradeLtd/kaas) which exposes `krab` functionality via a gRPC API.
+There are two ways to use `krab`, one is to import with `import "github.com/RTradeLtd/krab/v4"`, the other is to use [RTradeLtd/kaas](https://github.com/RTradeLtd/kaas) which exposes `krab` functionality via a gRPC API.
 
 ## limitations
 
